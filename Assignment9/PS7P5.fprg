@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="vjaki"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-16 10:25:52 PM"/>
+        <attribute name="created" value="dmpha2k7REVTS1RPUC05QUlKUkFMOzIwMjMtMDQtMTY7MDk6NTM6MDMgUE07Mjg5MA=="/>
+        <attribute name="edited" value="dmpha2k7REVTS1RPUC05QUlKUkFMOzIwMjMtMDQtMTY7MTA6MjU6NTIgUE07MTsyOTkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="code" type="String" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="cost" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter student last name: &quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;Enter credit hours taken: &quot;" newline="True"/>
+            <input variable="hours"/>
+            <output expression="&quot;Enter district code: &quot;" newline="True"/>
+            <input variable="code"/>
+            <call expression="comprate(code)"/>
+            <assign variable="cost" expression="comprate(code)"/>
+            <call expression="comptut(hours, cost)"/>
+            <assign variable="total" expression="comptut(hours, cost)"/>
+            <output expression="&quot;Student last name: &quot; &amp; lastname" newline="True"/>
+            <output expression="&quot;tuition owed: $&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+    <function name="comprate" type="Real" variable="cost">
+        <parameters>
+            <parameter name="code" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="cost" type="Real" array="False" size=""/>
+            <if expression="code == &quot;I&quot;">
+                <then>
+                    <assign variable="cost" expression="250"/>
+                </then>
+                <else>
+                    <if expression="code == &quot;O&quot;">
+                        <then>
+                            <assign variable="cost" expression="550"/>
+                        </then>
+                        <else>
+                            <assign variable="cost" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="comptut" type="Real" variable="total">
+        <parameters>
+            <parameter name="hours" type="Real" array="False"/>
+            <parameter name="cost" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="hours * cost"/>
+        </body>
+    </function>
+</flowgorithm>

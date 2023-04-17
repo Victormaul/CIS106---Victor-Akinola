@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="vjaki"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-16 05:34:16 PM"/>
+        <attribute name="created" value="dmpha2k7REVTS1RPUC05QUlKUkFMOzIwMjMtMDQtMTY7MDU6MTQ6NTUgUE07Mjg5MA=="/>
+        <attribute name="edited" value="dmpha2k7REVTS1RPUC05QUlKUkFMOzIwMjMtMDQtMTY7MDU6MzQ6MTYgUE07MTsyOTk3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="hits" type="Real" array="False" size=""/>
+            <declare name="atbat" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter lastname: &quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;Enter number of hits: &quot;" newline="True"/>
+            <input variable="hits"/>
+            <output expression="&quot;Enter number of at bats&quot;" newline="True"/>
+            <input variable="atbat"/>
+            <call expression="compbat(hits, atbat)"/>
+            <assign variable="avg" expression="compbat(hits, atbat)"/>
+            <output expression="&quot;Player Name: &quot; &amp; lastname" newline="True"/>
+            <output expression="&quot;Player batting average: &quot; &amp; avg" newline="True"/>
+        </body>
+    </function>
+    <function name="compbat" type="Real" variable="avg">
+        <parameters>
+            <parameter name="hits" type="Real" array="False"/>
+            <parameter name="atbat" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="hits / atbat"/>
+        </body>
+    </function>
+</flowgorithm>
